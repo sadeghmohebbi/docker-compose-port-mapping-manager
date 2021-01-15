@@ -29,7 +29,7 @@ Usage
 
   Options 
   --input, -i  base docker compose yaml file (default: docker-compose.yml) 
-  --output, -o  target docker compose yaml file (default: docker-compose.overwrite.yml) 
+  --output, -o  target docker compose yaml file (default: docker-compose.override.yml) 
   --delete, -D  delete ports action 
   --add, -A  add ports mapping action 
   --to-service, --to  selected service to add ports mapping option 

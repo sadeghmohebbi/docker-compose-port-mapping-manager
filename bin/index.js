@@ -12,7 +12,7 @@ $ docker-compose-port-mapping-manager <input> \n \
 \n \
 Options \n \
 --input, -i  base docker compose yaml file (default: docker-compose.yml) \n \
---output, -o  target docker compose yaml file (default: docker-compose.overwrite.yml) \n \
+--output, -o  target docker compose yaml file (default: docker-compose.override.yml) \n \
 --delete, -D  delete ports action \n \
 --add, -A  add ports mapping action \n \
 --to-service, --to  selected service to add ports mapping option \n \
@@ -70,7 +70,7 @@ const log = function(title, desc) {
 }
 
 cli.flags.input = cli.flags.input || 'docker-compose.yml'
-cli.flags.output = cli.flags.output || 'docker-compose.overwrite.yml'
+cli.flags.output = cli.flags.output || 'docker-compose.override.yml'
 
 const inputFilePath = path.resolve(cli.flags.input)
 const outputFilePath = path.resolve(cli.flags.output)
@@ -123,7 +123,7 @@ loadedActions.forEach(function (action) {
 
       console.log(chalk.greenBright.bold('Congratulations, It is done'))
       console.log(chalk.greenBright.bold('---------------------------'))
-      console.log(chalk.yellowBright('NOTE:')+' to see effect, run docker-compose up -d -f '+cli.flags.output)
+      console.log(chalk.yellowBright('NOTE:')+' to see effect, run docker-compose -f '+cli.flags.output+' up -d')
     }
   }
 })
