@@ -1,6 +1,6 @@
 {
   "name": "docker-compose-port-mapping-manager",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "adding or removing ports from docker compose yaml file via command line",
   "main": "bin/index.js",
   "scripts": {
