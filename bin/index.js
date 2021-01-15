@@ -15,8 +15,8 @@ Options \n \
 --output, -o  target docker compose yaml file (default: docker-compose.overwrite.yml) \n \
 --delete, -D  delete ports action \n \
 --add, -A  add ports mapping action \n \
---to-service, -to  selected service to add ports mapping option \n \
---from-service, -from  selected service to delete ports mapping option \n \
+--to-service, --to  selected service to add ports mapping option \n \
+--from-service, --from  selected service to delete ports mapping option \n \
 \n \
 Example: \n \
 remove 80->80 port mapping and add 8080->80 as a replacement to nginx service \n \

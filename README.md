@@ -1,8 +1,44 @@
 # Docker Compose Port Mapping Manager
 simply add or remove port mapping options via command line on docker compose yaml file
 
+## Installation
+
+you should have device nodejs+npm installed
+
+```bash
+npm -g install docker-compose-port-mapping-manager
+```
+
 ## Usage
 
+if you want to add port 8080 mapping to 80 of nginx and remove existing 80:80 mapping, run command below
+```bash
+
+docker-compose-port-mapping-manager --delete 80:80 --from nginx --add 8080:80 --to nginx
+```
+
+## See Help
+
+```bash
+docker-compose-port-mapping-manager --help
+
+adding or removing ports from docker compose yaml file via command line
+
+Usage 
+  $ docker-compose-port-mapping-manager <input> 
+
+  Options 
+  --input, -i  base docker compose yaml file (default: docker-compose.yml) 
+  --output, -o  target docker compose yaml file (default: docker-compose.overwrite.yml) 
+  --delete, -D  delete ports action 
+  --add, -A  add ports mapping action 
+  --to-service, --to  selected service to add ports mapping option 
+  --from-service, --from  selected service to delete ports mapping option 
+
+  Example: 
+  remove 80->80 port mapping and add 8080->80 as a replacement to nginx service 
+  $ docker-compose-port-mapping-manager --delete 80:80 --from nginx --add 8080:80 --to nginx
+```
 
 ## License
 ```
