@@ -2,17 +2,21 @@
   "name": "docker-compose-port-mapping-manager",
   "version": "1.0.0",
   "description": "adding or removing ports from docker compose yaml file via command line",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
+    "start": "node ./bin/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "docker-compose-port-mapping-manager": "./bin/index.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sadeghmohebbi/docker-compose-port-mapping-manager.git"
   },
   "keywords": [
-    "DockerCompose",
-    "PortMapping"
+    "Docker Compose",
+    "Port Mapping"
   ],
   "author": "Sadegh Mohebbi <mohebbi.sadegh@gmail.com>",
   "license": "Apache-2.0",
@@ -22,6 +26,7 @@
   "homepage": "https://github.com/sadeghmohebbi/docker-compose-port-mapping-manager#readme",
   "dependencies": {
     "chalk": "^4.1.0",
+    "lodash": "^4.17.20",
     "meow": "^9.0.0",
     "yaml": "^1.10.0"
   }
