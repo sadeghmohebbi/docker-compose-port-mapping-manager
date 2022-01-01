@@ -2,19 +2,31 @@
 #### Video Demo: https://youtu.be/eeYDFllO8u0
 #### Description:
 
-simply add or remove port mapping options via command line on docker compose yaml file
+simply add or remove port mapping options via command line on docker compose yaml file. somtimes in devops process and bash scripts, you wanna enable or disable service published ports, this tool help us to achieve this purpose.
+
+Compose is a tool for defining and running multi-container Docker applications. With Compose, you use a YAML file to configure your application’s services. Then, with a single command, you create and start all the services from your configuration. To learn more about all the features of Compose, see the list of features.
 
 ## Installation
 
-you should have device nodejs+npm installed
+you should have nodejs+npm installed environment, then you can install this package globaly via npm package manager
 
 ```bash
 npm -g install docker-compose-port-mapping-manager
 ```
 
 ## Usage
+simple, fast and expressive command line options!
 
-if you want to add port 8080 mapping to 80 of nginx and remove existing 80:80 mapping, run command below
+note that, default input file is *docker-compose.yml* and default output file is *docker-compose.overwrite.yml* file. you can change them with ``--input`` and ``--output`` options.
+
+```bash
+
+docker-compose-port-mapping-manager --delete {port-mapping} --from {service-name}
+
+docekr-compose-port-mapping-manager --add {port-mapping} --to {service-name}
+```
+
+if we combine two commands above together, for example we want to add port 8080 mapping to 80 of nginx and remove existing 80:80 mapping, run command below:
 ```bash
 
 docker-compose-port-mapping-manager --delete 80:80 --from nginx --add 8080:80 --to nginx
@@ -42,6 +54,9 @@ Usage
   remove 80->80 port mapping and add 8080->80 as a replacement to nginx service 
   $ docker-compose-port-mapping-manager --delete 80:80 --from nginx --add 8080:80 --to nginx
 ```
+
+that's all, i hope you enjoy this project
+contribution is open for all
 
 ## License
 ```
