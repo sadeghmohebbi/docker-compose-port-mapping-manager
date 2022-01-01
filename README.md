@@ -55,8 +55,7 @@ Usage
   $ docker-compose-port-mapping-manager --delete 80:80 --from nginx --add 8080:80 --to nginx
 ```
 
-that's all, i hope you enjoy this project
-contribution is open for all
+that's all, i hope you enjoy this project. contribution is open for all :)
 
 ## License
 ```
